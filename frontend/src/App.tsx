@@ -1,39 +1,16 @@
+import RandomColorDisplay from "./components/ColorDisplay";
+
 const App = () => {
-  const courseName = "Half Stack application development";
-  const courseParts = [
-    {
-      name: "Fundamentals",
-      exerciseCount: 10
-    },
-    {
-      name: "Using props to pass data",
-      exerciseCount: 7
-    },
-    {
-      name: "Deeper type usage",
-      exerciseCount: 14
-    }
-  ];
-
-  const totalExercises = courseParts.reduce((sum, part) => sum + part.exerciseCount, 0);
-
-  return (
-    <div>
-      <h1>{courseName}</h1>
-      <p>
-        {courseParts[0].name} {courseParts[0].exerciseCount}
-      </p>
-      <p>
-        {courseParts[1].name} {courseParts[1].exerciseCount}
-      </p>
-      <p>
-        {courseParts[2].name} {courseParts[2].exerciseCount}
-      </p>
-      <p>
-        Number of exercises {totalExercises}
-      </p>
+  return(
+    <div className="container mx-auto p-4"> {/* Example Tailwind class */}
+      <header className="text-center my-6">
+        <h1 className="text-3xl font-bold">Color Guessr</h1>
+      </header>
+      <main className="flex justify-center">
+        <RandomColorDisplay />
+      </main>
     </div>
-  );
-};
+  )
+}
 
 export default App;

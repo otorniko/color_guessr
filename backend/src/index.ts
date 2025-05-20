@@ -152,20 +152,31 @@ const colors = [
 ];
 
 const typeDefs = `
+  type RGBValues {
+    Red: Int
+    Green: Int
+    Blue: Int
+  }
+
   type Color {
     name: String
     hex: String
-    decimal: String
+    decimal: RGBValues
   }
 
   type Query {
     colors: [Color]
+    random_color: Color
   }
 `;
 
 const resolvers = {
     Query: {
         colors: () => colors,
+        random_color: () => {
+          const randomIndex = Math.floor(Math.random() * colors.length);
+          return colors[randomIndex]
+        }
     },
 };
 
